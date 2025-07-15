@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <Flex className="mx-[10px]" direction="column" align="center" ref={containerRef}>
+    <Flex className="mx-[20px]" direction="column" align="center" ref={containerRef}>
       <View></View>
       <Tokens></Tokens>
     </Flex>
