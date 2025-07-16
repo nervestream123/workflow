@@ -34,3 +34,15 @@
 #log::-webkit-scrollbar {
   display: none;
 }
+
+.flow-controls {
+
+}
+
+.flow-controls > button {
+  background-color: #23015d;
+}
+
+.flow-controls > button:hover {
+  background-color: #4300b6;
+}

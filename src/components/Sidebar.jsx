@@ -1,4 +1,4 @@
-import { Flex, Text, Avatar, Box } from '@radix-ui/themes';
+import { Flex, Text, Avatar } from '@radix-ui/themes';
 
 const actions = [
   { name: "API Request", color: "bg-teal-500", description: "Make requests to popular APIs or to custom ones." },
@@ -10,7 +10,7 @@ const actions = [
 
 function Sidebar() {
   return (
-    <Flex direction="column" width="100%" align="center" className="rounded-l-[5px] px-[15px] py-[15px] items-center  w-[100%] h-[100%]">
+    <Flex direction="column" width="100%" align="center" className="px-[15px] py-[15px] items-center  w-[100%] h-[100%]">
       {/* Header */}
       <Flex width="100%" className="px-[8px] py-[8px] rounded bg-[#090017] cursor-pointer!">
         <Flex className="items-center justify-center!">
@@ -51,7 +51,7 @@ function Sidebar() {
       </Flex>
 
       {/* Footer */}
-      <Flex width="100%" className="px-[8px] py-[8px] rounded cursor-pointer!">
+      <Flex width="100%" className="px-[8px] py-[8px] border-t border-purple-500/20 pt-[20px] cursor-pointer!">
         <Flex className="items-center justify-center!">
           <Avatar
             size="3"
