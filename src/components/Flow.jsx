@@ -6,6 +6,7 @@ import API from '../nodes/API';
 import Files from '../nodes/Files';
 import Decision from '../nodes/Decision';
 import ArtificialIntelligence from '../nodes/ArtificialIntelligence';
+import Notification from '../nodes/Notification';
 
 const initialNodes = [
   {
@@ -32,6 +33,12 @@ const initialNodes = [
     position: { x: 565, y: 100 },
     data: { label: 'Node 3' },
   },
+  {
+    id: 'n4',
+    type: 'notificationNode',
+    position: { x: 750, y: 100 },
+    data: { label: 'Node 4' },
+  },
 ];
 
 const initialEdges = [
@@ -49,6 +56,7 @@ const nodeTypes = {
   filesNode: Files,
   decisionNode: Decision,
   aiNode: ArtificialIntelligence,
+  notificationNode: Notification
 };
 
 function Flow() {
