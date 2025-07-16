@@ -1,7 +1,10 @@
-import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
-import { Flex, Text, TextField } from '@radix-ui/themes';
+import { Flex, Text, TextField, Select } from '@radix-ui/themes';
 import { useCallback } from 'react';
 import { Handle } from '@xyflow/react';
+
+const apis = [
+  { agentFunc: '1', color: 'bg-red-500', displayName: '1' }
+];
 
 function API({ data, selected }) {
   const onChange = useCallback((evt) => {
@@ -9,18 +12,80 @@ function API({ data, selected }) {
   }, []);
 
   return (
-    <Flex 
-      width="100%" 
-      direction="column" 
-      className={`p-[10px] border border-teal-800 rounded bg-[#090017] border-[2px] ${selected ? 'border-teal-500!' : ''}`}>
+    <Flex
+      id="api"
+      width="100%"
+      direction="column"
+      className={`border border-teal-800 rounded bg-[#090017] border-[2px] ${selected ? 'border-teal-500!' : ''}`}>
+
       <Handle type="target" position="top" />
-      <Text size="1">Input: 200</Text>
-      <Text size="1">Output: 200</Text>
-      <TextField.Root size="1" placeholder="Search the docs…" onChange={onChange} className="nodrag">
-        <TextField.Slot>
-          <MagnifyingGlassIcon height="16" width="16" />
-        </TextField.Slot>
-      </TextField.Root>
+
+      {/* Header */}
+      <Flex width="100%" align="center" className="justify-center! p-0 m-0 bg-teal-500">
+        <Text size="1" weight="bold" align="center p-0 m-0">API Request</Text>
+      </Flex>
+
+      {/* Form */}
+      <Flex width="100%" direction="column" className="items-start">
+        <Text size="1">Name</Text>
+        <TextField.Root size="1" placeholder="Search emails" onChange={onChange} className="nodrag">
+          {/* <TextField.Slot>
+            <MagnifyingGlassIcon height="16" width="16" />
+          </TextField.Slot> */}
+        </TextField.Root>
+      </Flex>
+
+      <Flex width="100%" direction="column" className="items-start!">
+        <Text size="1">API</Text>
+        <Select.Root size="1" defaultValue={apis[0]?.agentFunc || ''}>
+          <Select.Trigger />
+          <Select.Content>
+            {apis.map((s) => (
+              <Select.Item key={s.agentFunc} value={s.agentFunc}>
+                <Flex direction="row" align="center" className="content-center items-center">
+                  <div className={`w-2 h-2 ${s.color} rounded-full mr-[5px]`}></div>
+                  <Text size="1">{s.displayName}</Text>
+                </Flex>
+              </Select.Item>
+            ))}
+          </Select.Content>
+        </Select.Root>
+      </Flex>
+
+      <Flex width="100%" direction="column" className="items-start!">
+        <Text size="1">Endpoint</Text>
+        <Select.Root size="1" defaultValue={apis[0]?.agentFunc || ''}>
+          <Select.Trigger />
+          <Select.Content>
+            {apis.map((s) => (
+              <Select.Item key={s.agentFunc} value={s.agentFunc}>
+                <Flex direction="row" align="center" className="content-center items-center">
+                  <div className={`w-2 h-2 ${s.color} rounded-full mr-[5px]`}></div>
+                  <Text size="1">{s.displayName}</Text>
+                </Flex>
+              </Select.Item>
+            ))}
+          </Select.Content>
+        </Select.Root>
+      </Flex>
+
+      <Flex width="100%" direction="column" className="items-start!">
+        <Text size="1">Auth</Text>
+        <Select.Root size="1" defaultValue={apis[0]?.agentFunc || ''}>
+          <Select.Trigger />
+          <Select.Content>
+            {apis.map((s) => (
+              <Select.Item key={s.agentFunc} value={s.agentFunc}>
+                <Flex direction="row" align="center" className="content-center items-center">
+                  <div className={`w-2 h-2 ${s.color} rounded-full mr-[5px]`}></div>
+                  <Text size="1">{s.displayName}</Text>
+                </Flex>
+              </Select.Item>
+            ))}
+          </Select.Content>
+        </Select.Root>
+      </Flex>
+
     </Flex>
   );
 }

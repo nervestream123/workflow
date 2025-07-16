@@ -46,3 +46,9 @@
 .flow-controls > button:hover {
   background-color: #4300b6;
 }
+
+
+#api button {
+  min-width: 100%;
+  width: 100%;
+}
