@@ -4,6 +4,7 @@ import { ReactFlow, Background, Controls, addEdge, applyEdgeChanges, applyNodeCh
 import '@xyflow/react/dist/style.css';
 import API from '../nodes/API';
 import Files from '../nodes/Files';
+import Decision from '../nodes/Decision';
 
 const initialNodes = [
   {
@@ -15,8 +16,14 @@ const initialNodes = [
   {
     id: 'n1',
     type: 'apiNode',
-    position: { x: 200, y: 100 },
+    position: { x: 207, y: 100 },
     data: { label: 'Node 1' },
+  },
+  {
+    id: 'n2',
+    type: 'decisionNode',
+    position: { x: 385, y: 100 },
+    data: { label: 'Node 2' },
   },
 ];
 
@@ -33,6 +40,7 @@ const initialEdges = [
 const nodeTypes = {
   apiNode: API,
   filesNode: Files,
+  decisionNode: Decision,
 };
 
 function Flow() {
