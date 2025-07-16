@@ -3,13 +3,20 @@ import { useState, useCallback } from 'react';
 import { ReactFlow, Background, Controls, addEdge, applyEdgeChanges, applyNodeChanges } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import API from '../nodes/API';
+import Files from '../nodes/Files';
 
 const initialNodes = [
   {
+    id: 'n0',
+    type: 'filesNode',
+    position: { x: 15, y: 100 },
+    data: { label: 'Node 0' },
+  },
+  {
     id: 'n1',
     type: 'apiNode',
-    position: { x: 100, y: 100 },
-    data: { label: 'Node 2' },
+    position: { x: 200, y: 100 },
+    data: { label: 'Node 1' },
   },
 ];
 
@@ -25,6 +32,7 @@ const initialEdges = [
 
 const nodeTypes = {
   apiNode: API,
+  filesNode: Files,
 };
 
 function Flow() {

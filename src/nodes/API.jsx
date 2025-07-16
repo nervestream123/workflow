@@ -2,8 +2,16 @@ import { Flex, Text, TextField, Select } from '@radix-ui/themes';
 import { useCallback } from 'react';
 import { Handle } from '@xyflow/react';
 
-const apis = [
-  { agentFunc: '1', color: 'bg-red-500', displayName: '1' }
+const inputAPI = [
+  { agentFunc: 'google', color: 'bg-teal-500', displayName: 'Google' }
+];
+
+const inputEndpoint = [
+  { agentFunc: 'searchEmails', color: 'bg-teal-500', displayName: 'Search Emails' }
+];
+
+const inputAuth = [
+  { agentFunc: 'oauth', color: 'bg-teal-500', displayName: 'OAuth' }
 ];
 
 function API({ data, selected }) {
@@ -37,10 +45,10 @@ function API({ data, selected }) {
 
       <Flex width="100%" direction="column" className="items-start!">
         <Text size="1">API</Text>
-        <Select.Root size="1" defaultValue={apis[0]?.agentFunc || ''}>
+        <Select.Root size="1" defaultValue={inputAPI[0]?.agentFunc || ''}>
           <Select.Trigger />
           <Select.Content>
-            {apis.map((s) => (
+            {inputAPI.map((s) => (
               <Select.Item key={s.agentFunc} value={s.agentFunc}>
                 <Flex direction="row" align="center" className="content-center items-center">
                   <div className={`w-2 h-2 ${s.color} rounded-full mr-[5px]`}></div>
@@ -54,10 +62,10 @@ function API({ data, selected }) {
 
       <Flex width="100%" direction="column" className="items-start!">
         <Text size="1">Endpoint</Text>
-        <Select.Root size="1" defaultValue={apis[0]?.agentFunc || ''}>
+        <Select.Root size="1" defaultValue={inputEndpoint[0]?.agentFunc || ''}>
           <Select.Trigger />
           <Select.Content>
-            {apis.map((s) => (
+            {inputEndpoint.map((s) => (
               <Select.Item key={s.agentFunc} value={s.agentFunc}>
                 <Flex direction="row" align="center" className="content-center items-center">
                   <div className={`w-2 h-2 ${s.color} rounded-full mr-[5px]`}></div>
@@ -71,10 +79,10 @@ function API({ data, selected }) {
 
       <Flex width="100%" direction="column" className="items-start!">
         <Text size="1">Auth</Text>
-        <Select.Root size="1" defaultValue={apis[0]?.agentFunc || ''}>
+        <Select.Root size="1" defaultValue={inputAuth[0]?.agentFunc || ''}>
           <Select.Trigger />
           <Select.Content>
-            {apis.map((s) => (
+            {inputAuth.map((s) => (
               <Select.Item key={s.agentFunc} value={s.agentFunc}>
                 <Flex direction="row" align="center" className="content-center items-center">
                   <div className={`w-2 h-2 ${s.color} rounded-full mr-[5px]`}></div>
