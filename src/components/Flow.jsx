@@ -5,6 +5,7 @@ import '@xyflow/react/dist/style.css';
 import API from '../nodes/API';
 import Files from '../nodes/Files';
 import Decision from '../nodes/Decision';
+import ArtificialIntelligence from '../nodes/ArtificialIntelligence';
 
 const initialNodes = [
   {
@@ -25,6 +26,12 @@ const initialNodes = [
     position: { x: 385, y: 100 },
     data: { label: 'Node 2' },
   },
+  {
+    id: 'n3',
+    type: 'aiNode',
+    position: { x: 565, y: 100 },
+    data: { label: 'Node 3' },
+  },
 ];
 
 const initialEdges = [
@@ -41,6 +48,7 @@ const nodeTypes = {
   apiNode: API,
   filesNode: Files,
   decisionNode: Decision,
+  aiNode: ArtificialIntelligence,
 };
 
 function Flow() {
