@@ -24,7 +24,7 @@ function API({ data, selected }) {
       id="api"
       width="100%"
       direction="column"
-      className={`border border-teal-800 rounded bg-[#090017] border-[2px] ${selected ? 'border-teal-500!' : ''}`}>
+      className={`border border-teal-800 rounded bg-[#090017] border-[2px] min-w-[250px] ${selected ? 'border-teal-500!' : ''}`}>
 
       <Handle type="target" position="top" />
 
@@ -34,16 +34,16 @@ function API({ data, selected }) {
       </Flex>
 
       {/* Form */}
-      <Flex width="100%" direction="column" className="items-start">
+      <Flex width="100%" direction="column" className="items-start p-[5px]">
         <Text size="1">Name</Text>
-        <TextField.Root size="1" placeholder="Search emails" onChange={onChange} className="nodrag">
+        <TextField.Root size="1" placeholder="Search emails" onChange={onChange} className="nodrag w-[100%]">
           {/* <TextField.Slot>
             <MagnifyingGlassIcon height="16" width="16" />
           </TextField.Slot> */}
         </TextField.Root>
       </Flex>
 
-      <Flex width="100%" direction="column" className="items-start!">
+      <Flex width="100%" direction="column" className="items-start! p-[5px]">
         <Text size="1">API</Text>
         <Select.Root size="1" defaultValue={inputAPI[0]?.agentFunc || ''}>
           <Select.Trigger />
@@ -60,7 +60,7 @@ function API({ data, selected }) {
         </Select.Root>
       </Flex>
 
-      <Flex width="100%" direction="column" className="items-start!">
+      <Flex width="100%" direction="column" className="items-start! p-[5px]">
         <Text size="1">Endpoint</Text>
         <Select.Root size="1" defaultValue={inputEndpoint[0]?.agentFunc || ''}>
           <Select.Trigger />
@@ -77,7 +77,7 @@ function API({ data, selected }) {
         </Select.Root>
       </Flex>
 
-      <Flex width="100%" direction="column" className="items-start!">
+      <Flex width="100%" direction="column" className="items-start! p-[5px]">
         <Text size="1">Auth</Text>
         <Select.Root size="1" defaultValue={inputAuth[0]?.agentFunc || ''}>
           <Select.Trigger />

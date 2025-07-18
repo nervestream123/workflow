@@ -24,7 +24,7 @@ function Decision({ data, selected }) {
       id="api"
       width="100%"
       direction="column"
-      className={`border border-indigo-800 rounded bg-[#090017] border-[2px] ${selected ? 'border-indigo-500!' : ''}`}>
+      className={`border border-indigo-800 rounded bg-[#090017] border-[2px] min-w-[250px] ${selected ? 'border-indigo-500!' : ''}`}>
 
       <Handle type="target" position="left" />
 
@@ -34,16 +34,16 @@ function Decision({ data, selected }) {
       </Flex>
 
       {/* Form */}
-      <Flex width="100%" direction="column" className="items-start">
+      <Flex width="100%" direction="column" className="items-start p-[5px]">
         <Text size="1">Name</Text>
-        <TextField.Root size="1" placeholder="Make decision" onChange={onChange} className="nodrag">
+        <TextField.Root size="1" placeholder="Make decision" onChange={onChange} className="nodrag w-[100%]">
           {/* <TextField.Slot>
             <MagnifyingGlassIcon height="16" width="16" />
           </TextField.Slot> */}
         </TextField.Root>
       </Flex>
 
-      <Flex width="100%" direction="column" className="items-start!">
+      <Flex width="100%" direction="column" className="items-start! p-[5px]">
         <Text size="1">Decision</Text>
         <Select.Root size="1" defaultValue={inputDecision[0]?.agentFunc || ''}>
           <Select.Trigger />
@@ -60,7 +60,7 @@ function Decision({ data, selected }) {
         </Select.Root>
       </Flex>
 
-      <Flex width="100%" direction="column" className="items-start!">
+      <Flex width="100%" direction="column" className="items-start! p-[5px]">
         <Text size="1">If</Text>
         <Select.Root size="1" defaultValue={inputIf[0]?.agentFunc || ''}>
           <Select.Trigger />
@@ -77,9 +77,9 @@ function Decision({ data, selected }) {
         </Select.Root>
       </Flex>
 
-      <Flex width="100%" direction="column" className="items-start">
+      <Flex width="100%" direction="column" className="items-start p-[5px]">
         <Text size="1">Condition</Text>
-        <TextField.Root size="1" placeholder="0" onChange={onChange} className="nodrag">
+        <TextField.Root size="1" placeholder="0" onChange={onChange} className="nodrag w-[100%]">
           {/* <TextField.Slot>
             <MagnifyingGlassIcon height="16" width="16" />
           </TextField.Slot> */}

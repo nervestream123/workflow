@@ -20,7 +20,7 @@ function Files({ data, selected }) {
       id="api"
       width="100%"
       direction="column"
-      className={`border border-purple-800 rounded bg-[#090017] border-[2px] ${selected ? 'border-purple-500!' : ''}`}>
+      className={`border border-purple-800 rounded bg-[#090017] border-[2px] min-w-[250px] ${selected ? 'border-purple-500!' : ''}`}>
 
       {/* Header */}
       <Flex width="100%" align="center" className="justify-center! p-0 m-0 bg-purple-500">
@@ -28,7 +28,7 @@ function Files({ data, selected }) {
       </Flex>
 
       {/* Form */}
-      <Flex width="100%" direction="column" className="items-start">
+      <Flex width="100%" direction="column" className="items-start p-[5px]">
         <Text size="1">Name</Text>
         <TextField.Root size="1" placeholder="API Request Body" onChange={onChange} className="nodrag w-[100%]!">
           {/* <TextField.Slot>
@@ -37,7 +37,7 @@ function Files({ data, selected }) {
         </TextField.Root>
       </Flex>
 
-      <Flex width="100%" direction="column" className="items-start!">
+      <Flex width="100%" direction="column" className="items-start! p-[5px]">
         <Text size="1">Type</Text>
         <Select.Root size="1" defaultValue={inputType[0]?.agentFunc || ''}>
           <Select.Trigger />
@@ -54,9 +54,9 @@ function Files({ data, selected }) {
         </Select.Root>
       </Flex>
 
-      <Flex width="100%" direction="column" className="items-start">
+      <Flex width="100%" direction="column" className="items-start p-[5px]">
         <Text size="1">Text</Text>
-        <TextArea size="1" placeholder="Enter Body Text" className="nodrag"/>
+        <TextArea size="1" placeholder="Enter Body Text" className="nodrag w-[100%]"/>
       </Flex>
 
       <Handle type="source" position="bottom" />

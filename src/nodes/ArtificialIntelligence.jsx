@@ -16,7 +16,7 @@ function ArtificialIntelligence({ data, selected }) {
       id="api"
       width="100%"
       direction="column"
-      className={`border border-cyan-800 rounded bg-[#090017] border-[2px] ${selected ? 'border-cyan-500!' : ''}`}>
+      className={`border border-cyan-800 rounded bg-[#090017] border-[2px] min-w-[250px] ${selected ? 'border-cyan-500!' : ''}`}>
 
       <Handle type="target" position="top" />
 
@@ -26,7 +26,7 @@ function ArtificialIntelligence({ data, selected }) {
       </Flex>
 
       {/* Form */}
-      <Flex width="100%" direction="column" className="items-start">
+      <Flex width="100%" direction="column" className="items-start p-[5px]">
         <Text size="1">Name</Text>
         <TextField.Root size="1" placeholder="Summarize results" onChange={onChange} className="nodrag w-[100%]!">
           {/* <TextField.Slot>
@@ -35,7 +35,7 @@ function ArtificialIntelligence({ data, selected }) {
         </TextField.Root>
       </Flex>
 
-      <Flex width="100%" direction="column" className="items-start!">
+      <Flex width="100%" direction="column" className="items-start! p-[5px]">
         <Text size="1">Model</Text>
         <Select.Root size="1" defaultValue={inputModel[0]?.agentFunc || ''}>
           <Select.Trigger />
@@ -52,9 +52,9 @@ function ArtificialIntelligence({ data, selected }) {
         </Select.Root>
       </Flex>
 
-      <Flex width="100%" direction="column" className="items-start">
+      <Flex width="100%" direction="column" className="items-start p-[5px]">
         <Text size="1">Prompt</Text>
-        <TextArea size="1" placeholder="Enter Prompt" className="nodrag"/>
+        <TextArea size="1" placeholder="Enter Prompt" className="nodrag w-[100%]"/>
       </Flex>
 
       <Handle type="source" position="right" />
