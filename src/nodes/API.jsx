@@ -94,6 +94,8 @@ function API({ data, selected }) {
         </Select.Root>
       </Flex>
 
+      <Handle type="source" position="right" />
+
     </Flex>
   );
 }

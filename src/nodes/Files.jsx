@@ -22,8 +22,6 @@ function Files({ data, selected }) {
       direction="column"
       className={`border border-purple-800 rounded bg-[#090017] border-[2px] ${selected ? 'border-purple-500!' : ''}`}>
 
-      <Handle type="target" position="top" />
-
       {/* Header */}
       <Flex width="100%" align="center" className="justify-center! p-0 m-0 bg-purple-500">
         <Text size="1" weight="bold" align="center p-0 m-0">Files & Data</Text>
@@ -60,6 +58,8 @@ function Files({ data, selected }) {
         <Text size="1">Text</Text>
         <TextArea size="1" placeholder="Enter Body Text" className="nodrag"/>
       </Flex>
+
+      <Handle type="source" position="bottom" />
 
     </Flex>
   );

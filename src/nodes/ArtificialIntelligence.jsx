@@ -57,6 +57,8 @@ function ArtificialIntelligence({ data, selected }) {
         <TextArea size="1" placeholder="Enter Prompt" className="nodrag"/>
       </Flex>
 
+      <Handle type="source" position="right" />
+
     </Flex>
   );
 }

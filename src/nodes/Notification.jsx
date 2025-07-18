@@ -18,7 +18,7 @@ function Notification({ data, selected }) {
       direction="column"
       className={`border border-pink-800 rounded bg-[#090017] border-[2px] ${selected ? 'border-pink-500!' : ''}`}>
 
-      <Handle type="target" position="top" />
+      <Handle type="target" position="left" />
 
       {/* Header */}
       <Flex width="100%" align="center" className="justify-center! p-0 m-0 bg-pink-500">

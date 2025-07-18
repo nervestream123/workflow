@@ -26,7 +26,7 @@ function Decision({ data, selected }) {
       direction="column"
       className={`border border-indigo-800 rounded bg-[#090017] border-[2px] ${selected ? 'border-indigo-500!' : ''}`}>
 
-      <Handle type="target" position="top" />
+      <Handle type="target" position="left" />
 
       {/* Header */}
       <Flex width="100%" align="center" className="justify-center! p-0 m-0 bg-indigo-500">
@@ -85,6 +85,8 @@ function Decision({ data, selected }) {
           </TextField.Slot> */}
         </TextField.Root>
       </Flex>
+
+      <Handle type="source" position="bottom" />
 
     </Flex>
   );
